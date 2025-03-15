@@ -8,7 +8,7 @@ services:
       POSTGRES_USER: keycloak_db_user
       POSTGRES_PASSWORD: password #<== Change this!
     ports:
-      - "5433:5432"
+      - "5434:5432"
     networks:
       - keycloak_network
     restart: unless-stopped
@@ -18,7 +18,7 @@ services:
     command: start
     environment:
       KC_HOSTNAME: localhost
-      KC_HOSTNAME_PORT: 8081
+      KC_HOSTNAME_PORT: 8082
       KC_HOSTNAME_STRICT_BACKCHANNEL: false
       KC_HTTP_ENABLED: true
       KC_HOSTNAME_STRICT_HTTPS: false
@@ -30,7 +30,7 @@ services:
       KC_DB_USERNAME: keycloak_db_user
       KC_DB_PASSWORD: password
     ports:
-      - "8081:8080"
+      - "8082:8080"
     restart: unless-stopped
     depends_on:
       - postgres

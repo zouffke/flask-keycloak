@@ -1,0 +1,18 @@
+from flask import Flask
+
+from config import Config
+from extensions import oidc
+
+def create_app(config_class=Config):
+    app = Flask(__name__)
+    app.config.from_object(config_class)
+
+    # extensions
+    oidc.init_app(app)
+
+    # blueprints
+
+    from app.blueprints.main import bp as main_bp
+    app.register_blueprint(main_bp)
+
+    return app

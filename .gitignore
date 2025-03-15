@@ -251,7 +251,6 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
 .venv
 env/
 venv/
@@ -343,3 +342,4 @@ instance/*
 
 # Android studio 3.1+ serialized cache file
 
+!/.env
